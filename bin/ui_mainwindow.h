@@ -18,9 +18,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
-#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -51,15 +49,6 @@ public:
     QLabel *labHumidity;
     QLabel *labClounds;
     QSlider *horizontalSlider;
-    QToolBox *toolBox;
-    QWidget *Item;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QWidget *page_2;
-    QStackedWidget *stackedWidget;
-    QWidget *page_3;
-    QWidget *page_4;
-    QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -312,46 +301,6 @@ public:
 
         gridLayout->addWidget(horizontalSlider, 2, 3, 1, 3);
 
-        toolBox = new QToolBox(centralwidget);
-        toolBox->setObjectName(QString::fromUtf8("toolBox"));
-        toolBox->setGeometry(QRect(320, 10, 131, 141));
-        toolBox->setContextMenuPolicy(Qt::NoContextMenu);
-        toolBox->setAutoFillBackground(true);
-        toolBox->setFrameShape(QFrame::Panel);
-        toolBox->setFrameShadow(QFrame::Sunken);
-        toolBox->setLineWidth(5);
-        toolBox->setMidLineWidth(0);
-        Item = new QWidget();
-        Item->setObjectName(QString::fromUtf8("Item"));
-        Item->setGeometry(QRect(0, 0, 121, 73));
-        pushButton = new QPushButton(Item);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(10, 0, 75, 24));
-        pushButton_2 = new QPushButton(Item);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 30, 75, 24));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/images/thunderstone.jpg"), QSize(), QIcon::Normal, QIcon::Off);
-        toolBox->addItem(Item, icon1, QString::fromUtf8("Profile"));
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        page_2->setGeometry(QRect(0, 0, 121, 73));
-        toolBox->addItem(page_2, QString::fromUtf8("Page 2"));
-        stackedWidget = new QStackedWidget(centralwidget);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(470, 10, 111, 51));
-        stackedWidget->setFrameShape(QFrame::Box);
-        stackedWidget->setFrameShadow(QFrame::Raised);
-        stackedWidget->setLineWidth(5);
-        page_3 = new QWidget();
-        page_3->setObjectName(QString::fromUtf8("page_3"));
-        stackedWidget->addWidget(page_3);
-        page_4 = new QWidget();
-        page_4->setObjectName(QString::fromUtf8("page_4"));
-        pushButton_3 = new QPushButton(page_4);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(20, 10, 75, 24));
-        stackedWidget->addWidget(page_4);
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(630, 30, 75, 24));
@@ -365,11 +314,6 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
-
-        toolBox->setCurrentIndex(0);
-        toolBox->layout()->setSpacing(5);
-        stackedWidget->setCurrentIndex(1);
-
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -394,11 +338,6 @@ public:
         labVSunrise->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         labHumidity->setText(QCoreApplication::translate("MainWindow", "\320\222\320\273\320\260\320\266\320\275\320\276\321\201\321\202\321\214", nullptr));
         labClounds->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261\320\273\320\260\321\207\320\275\320\276\321\201\321\202\321\214", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        toolBox->setItemText(toolBox->indexOf(Item), QCoreApplication::translate("MainWindow", "Profile", nullptr));
-        toolBox->setItemText(toolBox->indexOf(page_2), QCoreApplication::translate("MainWindow", "Page 2", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
